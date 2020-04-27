@@ -42,8 +42,7 @@ public struct Heap<Element> {
     /// Remove and return the max/min (based on given order) element in the heap
     /// - Returns: Max/Min (based on given order) element in the heap
     /// - Complexity: O(log N)
-    @discardableResult
-    public mutating func remove() -> Element? {
+    @discardableResult public mutating func remove() -> Element? {
         guard let val = nodes.first else { return nil }
         if nodes.count == 1 {
             nodes.removeLast()

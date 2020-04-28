@@ -80,11 +80,12 @@ final class LinkedListTests: XCTestCase {
         list.appendFirst(2)
         list.appendLast(5)
         list.appendLast(6)
+        list.appendFirst(1)
         
-        XCTAssertEqual(list.remove(at: 1), 5)
-        XCTAssertEqual(list.first, 2)
+        XCTAssertEqual(list.remove(at: 2), 5)
+        XCTAssertEqual(list.first, 1)
         XCTAssertEqual(list.last, 6)
-        XCTAssertEqual(list.count, 2)
+        XCTAssertEqual(list.count, 3)
     }
     
     func testRemoveFirst() {

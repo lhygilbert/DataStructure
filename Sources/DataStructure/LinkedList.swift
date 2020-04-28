@@ -143,11 +143,20 @@ public final class LinkedList<Element> {
             fatalError("Index out of range")
         }
         
-        var ptr = sentinel.next
-        for _ in 0..<index {
-            ptr = ptr?.next
+        let midIndex = size / 2
+        if index <= midIndex {
+            var ptr = sentinel.next
+            for _ in 0..<index {
+                ptr = ptr?.next
+            }
+            return ptr!
+        } else {
+            var ptr = sentinel.prev
+            for _ in 0..<(size - 1 - index) {
+                ptr = ptr?.prev
+            }
+            return ptr!
         }
-        return ptr!
     }
     
 }
